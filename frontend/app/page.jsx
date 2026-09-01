@@ -1,12 +1,28 @@
 'use client';
 
 import Link from "next/link";
-import { useState } from "react";
-import { getUser } from "@/lib/api";
+import { useSyncExternalStore } from "react";
 
+function subscribe(callback) {
+    window.addEventListener('storage', callback);
+    window.addEventListener('auth-change', callback);
+    return () => {
+        window.removeEventListener('storage', callback);
+        window.removeEventListener('auth-change', callback);
+    }
+}
 
+function getUserSnapshot() {
+    const storedUser = localStorage.getItem('user');
+    return storedUser;
+}
+
+function getServerSnapshot() {
+    return null;
+}
 export default function Home() {
-  const [user] = useState(() => getUser());
+  const storedUser = useSyncExternalStore(subscribe, getUserSnapshot, getServerSnapshot);
+  const user = storedUser ? JSON.parse(storedUser) : null;
 
   return (
     <>

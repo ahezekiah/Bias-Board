@@ -131,7 +131,7 @@ export default function AdminIdolCard({ idol, onChange }) {
     return (
         <article className="adminIdolCard">
             <div className="adminIdolImage">
-                <Image src={idol.image_url || '/no-product-image-400x400-1.png'} alt={idol.stage_name || 'Stage Name'} width={400} height={500}/>
+                <Image src={idol.image_url || '/images/no-product-image-400x400-1.png'} alt={idol.stage_name || 'Stage Name'} width={400} height={500}/>
             </div>
             <div className="adminIdolInfo">
                 <span className="groupBadge">

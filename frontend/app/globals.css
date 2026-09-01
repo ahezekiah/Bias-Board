@@ -114,9 +114,10 @@ button {
   padding: 100px 8%;
   display: flex;
   align-items: center;
-  background: linear-gradient(90deg, rgba(9, 7, 13, 0.95), rgba(9, 7, 13, 0.45)), url('https://www.allkpop.com/upload/2022/01/content/241413/1643051637-v-5.png');
+  background: linear-gradient(90deg, rgba(9, 7, 13, 0.90), rgba(9, 7, 13, 0.30)), url('/images/hero-kpop.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .heroContent {
@@ -518,6 +519,10 @@ textarea {
 .adminNavLink {
   color: var(--pink) !important;
   font-weight: 800;
+}
+
+.adminNavLink:hover {
+  color: var(--purple) !important;
 }
 
 .adminCreateSection {

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
-import { getUser } from "@/lib/api";
 import { useRouter } from "next/navigation";
 
 function subscribe(callback) {
