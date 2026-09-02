@@ -160,8 +160,8 @@ export default function AdminPage() {
                                 <input name="position" value={form.position} onChange={handleChange} placeholder="Leader, Vocalist, Dancer, Rapper, etc..." required />
                             </label>
                             <label>
-                                Birthday
-                                <input name="birthday" type="date" value={form.birthday ? form.birthday.split('T')[0] : ''} onChange={handleChange}/>
+                                Birthday *
+                                <input name="birthday" type="date" value={form.birthday ? form.birthday.split('T')[0] : ''} onChange={handleChange} required/>
                             </label>
                             <label>
                                 MBTI
