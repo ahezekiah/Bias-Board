@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: ['http://localhost:3000', 'https://bias-board.netlify.app'], credentials: true }));
 app.use(express.json());
 
 
@@ -20,7 +20,7 @@ app.use((req, res, next) => {
     console.log(`${req.method} ${req.originalUrl}`);
     console.log('Authorization:', req.headers.authorization);
     next();
-})
+});
 
 app.get('/', (req, res) => {
     res.json({ message: 'BiasBoard API is Running! 🎤' });
