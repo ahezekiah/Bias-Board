@@ -549,7 +549,7 @@ VALUES
     'Kim Da-hyun',
     'TWICE',
     'Lead Rapper / Vocalist (Sub-Vocalist)',
-    'https://static.wikia.nocookie.net/twicenation/images/a/a2/Dahyun_ENEMY_Concept_Photo.jpeg/revision/latest',
+    'https://static.wikia.nocookie.net/twicenation/images/a/a2/Dahyun_ENEMY_Concept_Photo.jpeg/revision/latest/scale-to-width/360?cb=20251015042748',
     '1998-05-28',
     'ISFJ (Denfender)',
     'South Korean',
