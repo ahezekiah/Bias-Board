@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function IdolCard({ idol, showDetails = true, compact = false }) {
     return (
         <article className={`idolCard ${compact ? 'compact' : ''}`}>
-            <Image src={idol.image_url || '/images/no-product-image-400x400-1.png'} alt={idol.stage_name || 'Stage Name'} width={300} height={400}/>
+            <Image src={idol.image_url || '/images/no-product-image-400x400-1.png'} alt={idol.stage_name || 'Stage Name'} width={300} height={400} unoptimized referrerPolicy="no-referrer"/>
             <div className="idolCardContent">
                 <span className="groupBadge">
                     {idol.group_name}

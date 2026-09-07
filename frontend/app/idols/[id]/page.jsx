@@ -76,7 +76,7 @@ export default function IdolDetails() {
     return (
         <section className="section">
             <div className="idolDetails">
-                <Image className='detailImage' src={idol.image_url} alt={idol.stage_name} width={700} height={650}/>
+                <Image className='detailImage' src={idol.image_url || '/images/no-product-image-400x400-1.png'} alt={idol.stage_name || 'Stage Name'} width={700} height={650} unoptimized referrerPolicy="no-referrer"/>
                 <div>
                     <span className="groupBadge">{idol.group_name}</span>
                     <h1>{idol.stage_name}</h1>

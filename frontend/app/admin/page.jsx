@@ -197,7 +197,7 @@ export default function AdminPage() {
                         {form.image_url && (
                             <div className="adminImagePreview">
                                 <p>Image Preview</p>
-                                <Image src={form.image_url} alt="New Idol Preview" width={400} height={500} />
+                                <Image src={form.image_url || '/images/no-product-image-400x400-1.png'} alt="New Idol Preview" width={400} height={500} unoptimized referrerPolicy="no-referrer"/>
                             </div>
                         )}
                         {error && (

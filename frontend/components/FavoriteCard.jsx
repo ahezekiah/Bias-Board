@@ -44,7 +44,7 @@ export default function FavoriteCard({ favorite, onChange }) {
     }
     return (
         <article className="favoriteCard">
-            <Image src={favorite.image_url} alt={favorite.stage_name} width={100} height={320}/>
+            <Image src={favorite.image_url || '/images/no-product-image-400x400-1.png'} alt={favorite.stage_name || 'Stage Name'} width={100} height={320} unoptimized referrerPolicy="no-referrer"/>
             <div className="favoriteContent">
                 <span className="groupBadge">{favorite.group_name}</span>
                 <h2>{favorite.stage_name}</h2>
