@@ -9,7 +9,7 @@ import { errorHandler } from './middleware/errorHandler.js';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT;
 
 app.use(cors({ origin: ['http://localhost:3000', 'https://bias-board.netlify.app'], credentials: true }));
 app.use(express.json());
