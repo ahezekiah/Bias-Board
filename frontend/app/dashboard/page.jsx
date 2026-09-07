@@ -30,7 +30,7 @@ export default function DashboardPage() {
             } catch (error) {
                 setFavorites([]);
                 setError(error.message);
-                if (error.message === 'Authentication required' || error.message === 'Invalid or expired token') {
+                if (error.message === 'Authentication Required.' || error.message === 'Invalid or expired token.') {
                     localStorage.removeItem('token');
                     localStorage.removeItem('user');
                     window.dispatchEvent(new Event('auth-change'));
@@ -57,7 +57,7 @@ export default function DashboardPage() {
             } catch (error) {
                 setFavorites([]);
                 setError(error.message);
-                if (error.message === 'Authentication required' || error.message === 'Invalid or expired token') {
+                if (error.message === 'Authentication Required.' || error.message === 'Invalid or expired token.') {
                     localStorage.removeItem('token');
                     localStorage.removeItem('user');
                     window.dispatchEvent(new Event('auth-change'));

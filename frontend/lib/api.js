@@ -30,12 +30,10 @@ export async function apiRequest(endpoint, options = {}, requireAuth = false) {
 
     if (requireAuth) {
         const token = getToken();
-        console.log('Stored Token:', token);
         if (token) {
             headers.Authorization = `Bearer ${token}`;
         }
     }
-    console.log('Outgoing Headers:', headers);
 
     const response = await fetch(`${API_URL}${endpoint}`, {
         ...options,

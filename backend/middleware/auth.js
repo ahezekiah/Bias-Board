@@ -6,7 +6,7 @@ export function authenticateToken(req, res, next) {
     const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.split(' ')[1] : null;
 
     if (!token) {
-        return res.status(401).json({ error: 'Authentication Required' });
+        return res.status(401).json({ error: 'Authentication Required.' });
     }
 
     try {

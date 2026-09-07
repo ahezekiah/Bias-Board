@@ -5,7 +5,6 @@ import { useParams, useRouter } from "next/navigation";
 import { apiRequest, getUser } from "@/lib/api";
 import Image from "next/image";
 import Link from "next/link";
-import { FaInsagram } from 'react-icons/fa';
 
 export default function IdolDetails() {
     const params = useParams();

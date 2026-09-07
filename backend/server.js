@@ -16,9 +16,9 @@ app.use(express.json());
 
 
 // Auth Check/Logger
-app.use((res, req, next) => {
-    console.log(`${req.method} ${req.orginalUrl}`);
-    console.log('Authorization:', req.headersSent.authorization);
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.originalUrl}`);
+    console.log('Authorization:', req.headers.authorization);
     next();
 })
 

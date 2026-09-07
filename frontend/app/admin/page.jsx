@@ -50,7 +50,7 @@ export default function AdminPage() {
                 return;
             }
             if (currentUser.role !== 'admin') {
-                router.replace('/dashbaord');
+                router.replace('/dashboard');
                 return;
             }
             setUser(currentUser);
@@ -105,9 +105,11 @@ export default function AdminPage() {
     }
 
     if (loading) {
-        <section className="secction">
-            Loading Admin Dashboard...
-        </section>
+        return (
+            <section className="section">
+                Loading Admin Dashboard...
+            </section>
+        );
     }
     return (
         <section className="section">
