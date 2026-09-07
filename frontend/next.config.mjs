@@ -24,18 +24,6 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'static.wikia.nocookie.net',
             },
-            {
-                protocol: 'https',
-                hostname: 'static.wikia.nocookie.net/twicenation',
-            },
-            {
-                protocol: 'https',
-                hostname: 'static.wikia.nocookie.net/atiny',
-            },
-            {
-                protocol: 'https',
-                hostname: 'static.wikia.nocookie.net/aespa',
-            },
         ],
     },
 };
