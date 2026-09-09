@@ -190,16 +190,16 @@ export default function AdminPage() {
                             Image URL *
                             <input type="url" name="image_url" value={form.image_url} onChange={handleChange} placeholder="https://example.com/jungkook.jpg" required />
                         </label>
-                        <label>
-                            Bio
-                            <textarea name="bio" value={form.bio} onChange={handleChange} placeholder="Short biography about the Idol..." />
-                        </label>
                         {form.image_url && (
                             <div className="adminImagePreview">
                                 <p>Image Preview</p>
                                 <Image src={form.image_url || '/images/no-product-image-400x400-1.png'} alt="New Idol Preview" width={400} height={500} unoptimized referrerPolicy="no-referrer"/>
                             </div>
                         )}
+                        <label>
+                            Bio
+                            <textarea name="bio" value={form.bio} onChange={handleChange} placeholder="Short biography about the Idol..." />
+                        </label>
                         {error && (
                             <p className="error">{error}</p>
                         )}
