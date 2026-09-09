@@ -41,7 +41,7 @@ export default function AdminIdolCard({ idol, onChange }) {
             requestAnimationFrame(() => {
                 window.scrollTo({
                     top: previousScrollPosition.current,
-                    behavior: 'auto'
+                    behavior: 'smooth'
                 });
             })
         })
