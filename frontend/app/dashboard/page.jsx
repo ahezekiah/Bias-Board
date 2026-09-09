@@ -73,7 +73,7 @@ export default function DashboardPage() {
     if (loading) {
         return (
             <section className="section">
-                <p>Loading you Bias List...</p>
+                <p>Loading Bias List...</p>
             </section>
         );
     }
