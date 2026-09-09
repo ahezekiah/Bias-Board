@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { apiRequest } from "@/lib/api";
 import Image from "next/image";
 
 export default function AdminIdolCard({ idol, onChange }) {
+    const previousScrollPosition = useRef(0);
     const [editing, setEditing] = useState(false);
     const [error, setError] = useState('');
     const [form, setForm] = useState({
@@ -30,6 +31,27 @@ export default function AdminIdolCard({ idol, onChange }) {
         }));
     }
 
+    function handleEdit() {
+        previousScrollPosition.current = window.scrollY;
+        setEditing(true);
+    }
+
+    function restoreScrollPosition() {
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                window.scrollTo({
+                    top: previousScrollPosition.current,
+                    behavior: 'auto'
+                });
+            })
+        })
+    }
+
+    function handleCancel() {
+        setEditing(false);
+        restoreScrollPosition();
+    }
+
     async function handleUpdate(e) {
         e.preventDefault();
         setError('');
@@ -40,10 +62,13 @@ export default function AdminIdolCard({ idol, onChange }) {
             }, true);
             setEditing(false);
             await onChange();
+            restoreScrollPosition();
         } catch (error) {
             setError(error.message);
         }
     }
+
+
 
     async function handleDelete() {
         const confirmed = window.confirm(`Are you sure that you want to delete ${idol.stage_name} from BiasBoard?`);
@@ -127,7 +152,7 @@ export default function AdminIdolCard({ idol, onChange }) {
                     )}
                     <div className="cardActions">
                         <button type="submit" className="button">Save Changes</button>
-                        <button type="button" className="button secondary" onClick={() => setEditing(false)}>Cancel Changes</button>
+                        <button type="button" className="button secondary" onClick={handleCancel}>Cancel Changes</button>
                     </div>
                 </form>
             </article>
@@ -150,7 +175,7 @@ export default function AdminIdolCard({ idol, onChange }) {
                     <p className="error">{error}</p>
                 )}
                 <div className="cardActions">
-                    <button type="button" className="button" onClick={() => setEditing(true)}>Edit Idol</button>
+                    <button type="button" className="button" onClick={handleEdit}>Edit Idol</button>
                     <button type="button" className="button danger" onClick={handleDelete}>Delete Idol</button>
                 </div>
             </div>
